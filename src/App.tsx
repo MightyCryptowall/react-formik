@@ -1,19 +1,24 @@
 
-import { Formik } from 'formik';
+import { Container, Grid } from '@mui/material';
 import './App.css';
+import Form from './components/Form';
 
 function App() {
 
 
-  const handleSubmit = (values: any) => {};
+ 
 
   return (
     <div className="App">
-      <Formik initialValues={{}} onSubmit={handleSubmit}>
-        {() => {
-          return null;
-        }}  
-      </Formik>      
+      <Container maxWidth="md">
+        <Grid container justifyContent="center">
+          <Grid item sm={5}>
+                <Form/>
+          </Grid>
+            
+        </Grid>
+      </Container>
+      
     </div>
   );
 }
