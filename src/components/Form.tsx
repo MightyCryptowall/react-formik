@@ -48,13 +48,10 @@ const Form: React.FC<FormProps> = () => {
           </Typography>
 
           <TextField
-            id="firstName"
-            name="firstName"
             label="First Name"
             variant="standard"
             type="text"
-            onChange={formik.handleChange}
-            value={formik.values.firstName}
+            {...formik.getFieldProps("firstName")}
             style={{ paddingBottom: "1rem" }}
             error={
               formik.errors.firstName && formik.touched.firstName ? true : false
@@ -64,16 +61,13 @@ const Form: React.FC<FormProps> = () => {
                 ? formik.errors.firstName
                 : ""
             }
-            onBlur={formik.handleBlur}
+          
           />
           <TextField
-            id="lastName"
-            name="lastName"
             label="Last Name"
             variant="standard"
             type="text"
-            onChange={formik.handleChange}
-            value={formik.values.lastName}
+            {...formik.getFieldProps("lastName")}
             style={{ paddingBottom: "1rem" }}
             error={
               formik.errors.lastName && formik.touched.lastName ? true : false
@@ -83,16 +77,12 @@ const Form: React.FC<FormProps> = () => {
                 ? formik.errors.lastName
                 : ""
             }
-            onBlur={formik.handleBlur}
           />
           <TextField
-            id="email"
-            name="email"
             label="Email"
             variant="standard"
             type="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
+            {...formik.getFieldProps("email")}
             style={{ paddingBottom: "1rem" }}
             error={formik.errors.email && formik.touched.email ? true : false}
             helperText={
@@ -100,7 +90,6 @@ const Form: React.FC<FormProps> = () => {
                 ? formik.errors.email
                 : ""
             }
-            onBlur={formik.handleBlur}
           />
         </CardContent>
         <CardActions style={{ justifyContent: "flex-end" }}>
